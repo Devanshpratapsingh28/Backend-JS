@@ -7,6 +7,16 @@ dotenv.config({
 })
 
 connectDB()
+.then(()=>{// It is optional to use. We use it to handle promises return by async function that used in connectDB().
+
+    app.listen(process.env.PORT || 8000, ()=>{
+        console.log(`Server is running on port ${process.env.PORT || 8000}`);
+    })
+})
+.catch((err)=>{
+    console.log("MongoDB connection failed !!!",err)
+})
+
 // 2nd approach
 
 
