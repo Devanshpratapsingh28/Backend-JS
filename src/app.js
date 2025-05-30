@@ -9,3 +9,6 @@ app.use(cors({
 }))
 
 app.use(express.json({limit: "10kb"})); // Limit the size of JSON payloads to 10kb
+app.use(express.urlencoded({extended: true,limit: "10kb"}));// Limit the size of URL-encoded payloads to 10kb.
+app.use(cookieParser());
+app.use(express.static("public"));// used to save and use static files like images,css etc from public directory.
